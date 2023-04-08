@@ -175,7 +175,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Theme Settings
  */
 require get_template_directory() . '/inc/theme-options.php';
-
-add_action('init', function () {
-	echo "test github workflow new testing";
-});
