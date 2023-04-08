@@ -17,4 +17,4 @@ jobs:
                   server: ${{ secrets.ftp_host }}
                   username: ${{ secrets.ftp_username }}
                   password: ${{ secrets.ftp_password }}
-                  server-dir: wp-content/themes/wp-theme
+                  server-dir: wp-content/themes/wp-theme/
