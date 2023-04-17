@@ -35,7 +35,7 @@ const Index = (props: Props) => {
 						color = "yellow";
 					}
 					return (
-						<Button color={color} to={href}>
+						<Button as="a" color={color} to={href}>
 							{domToReact(children)}
 						</Button>
 					);

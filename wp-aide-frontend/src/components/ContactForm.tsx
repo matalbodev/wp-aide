@@ -1,4 +1,5 @@
 import { EventHandler, FormEvent, useState } from "react";
+import Button from "./Button";
 
 export default function Form() {
 	const [responseMessage, setResponseMessage] = useState("");
@@ -16,7 +17,7 @@ export default function Form() {
 		}
 	}
 
-	const commonsInputClasses = "border border-blue-theme w-full shadow-xl p-2";
+	const commonsInputClasses = "border w-full shadow-xl p-2";
 
 	return (
 		<form id="contact" onSubmit={submit}>
@@ -36,8 +37,12 @@ export default function Form() {
 					<input className={commonsInputClasses} placeholder="Téléphone" type="tel" name="telephone" id="telephone" />
 				</div>
 			</div>
-			<textarea placeholder="Description du projet..." rows={8} className={commonsInputClasses} id="message" name="message" />
-			<button className="wp-block-button__link wp-element-button">Envoyer ma demande</button>
+			<textarea placeholder="Description du projet..." rows={16} className={[commonsInputClasses, "mb-8"].join(" ")} id="message" name="message" />
+			<div className="text-right">
+				<Button as="button" color="blue">
+					Envoyer ma demande
+				</Button>
+			</div>
 			{responseMessage && <p>{responseMessage}</p>}
 		</form>
 	);
