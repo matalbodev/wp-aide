@@ -1,0 +1,42 @@
+@use "sass:map";
+.hero {
+	color: white;
+	padding-top: 140px;
+	position: relative;
+	z-index: 1;
+
+	.wp-block-columns {
+		overflow: hidden;
+	}
+
+	.wp-block-heading {
+		margin-bottom: 2rem;
+
+		line-height: 0.95;
+		font-weight: 200;
+		strong {
+			font-weight: 700;
+		}
+
+		+ p {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.wp-block-column:first-child {
+		position: relative;
+		z-index: 2;
+	}
+
+	&::before {
+		content: "";
+		left: 0;
+		top: 0;
+		z-index: -1;
+		position: absolute;
+		background-color: map.get($colors, "blue");
+		background: linear-gradient(0deg, map.get($colors, "blue") 21.35%, map.get($colors, "blue-darker") 100%);
+		width: 100%;
+		height: 81%;
+	}
+}

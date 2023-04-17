@@ -1,0 +1,13 @@
+@use "sass:map";
+.cta-contact {
+	background-color: map.get($colors, "yellow");
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	img {
+		mix-blend-mode: soft-light;
+	}
+
+	.wp-block-column:first-child {
+		font-size: 18px;
+	}
+}

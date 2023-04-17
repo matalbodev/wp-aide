@@ -1,0 +1,9 @@
+.list-card {
+	ul {
+		list-style-type: disc;
+		font-size: 14px;
+		li:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateZ(0);
+	}
+}
+
+$duration: 0.5s;
+.animated {
+	animation-duration: 1s;
+	animation-duration: $duration;
+	animation-fill-mode: both;
+	animation-delay: 0ms;
+	-webkit-animation-delay: 0ms;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-fill-mode: both;
+
+	&__fadeInDown {
+		animation-name: fadeInDown;
+		-webkit-animation-name: fadeInDown;
+	}
+
+	&--50 {
+		animation-delay: 150ms;
+		-webkit-animation-delay: 150ms;
+	}
+	&--100 {
+		animation-delay: 300ms;
+		-webkit-animation-delay: 300ms;
+	}
+	&--150 {
+		animation-delay: 600ms;
+		-webkit-animation-delay: 600ms;
+	}
+}
