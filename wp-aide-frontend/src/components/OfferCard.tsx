@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import parse from "html-react-parser";
 import clsx from "clsx";
+import Button from "./Button";
 
 interface Props {
 	title: string;
@@ -33,9 +34,9 @@ const OfferCard: FC<Props> = (props) => {
 			</div>
 			<div className="list-card mb-8">{parse(description)}</div>
 			<div className="text-center mt-auto mb-8">
-				<a href="#" className="wp-block-button__link wp-element-button">
+				<Button color="yellow" as="a" to="#contact">
 					Faire une demande
-				</a>
+				</Button>
 			</div>
 		</div>
 	);
