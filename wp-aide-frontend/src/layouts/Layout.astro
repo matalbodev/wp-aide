@@ -7,8 +7,7 @@ export interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
-const reqMeta = await fetch("https://backoffice.wpaide.fr/wp-json/rankmath/v1/getHead?url=https://wpaide.fr");
+const reqMeta = await fetch("https://backoffice.wpaide.fr/wp-json/rankmath/v1/getHead?url=https://backoffice.wpaide.fr");
 const res = await reqMeta.json();
 const meta = res.head;
 ---
