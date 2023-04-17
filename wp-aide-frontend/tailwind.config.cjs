@@ -1,8 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
-		extend: {},
+		fontFamily: {
+			display: ["Inter"],
+			body: ["Inter"],
+			sans: ["Inter"],
+		},
+		extend: {
+			fontFamily: {
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+			},
+			colors: {
+				"yellow-theme": "#fcd034",
+				"blue-theme": "#17213c",
+			},
+		},
 	},
 	plugins: [],
-}
+};
