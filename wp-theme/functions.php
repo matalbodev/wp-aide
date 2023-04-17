@@ -175,3 +175,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Theme Settings
  */
 require get_template_directory() . '/inc/theme-options.php';
+
+
+add_filter('rest_url', function($url) {
+  $url = str_replace(home_url(), site_url(). '/', $url);
+  return $url;
+});

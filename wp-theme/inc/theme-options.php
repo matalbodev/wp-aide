@@ -34,63 +34,99 @@ function gutenberg_starter_theme_options() {
  * Build the WP-Admin settings page.
  */
 function gutenberg_starter_theme_options_page() { ?>
-	<div class="wrap">
-	<h1><?php _e('Gutenberg Starter Theme Options', 'gutenberg-starter-theme'); ?></h1>
-	<form method="post" action="options.php">
-		<?php settings_fields( 'gutenberg-starter-theme-options' ); ?>
-		<?php do_settings_sections( 'gutenberg-starter-theme-options' ); ?>
+<div class="wrap">
+  <h1><?php _e('Gutenberg Starter Theme Options', 'gutenberg-starter-theme'); ?></h1>
+  <form
+    method="post"
+    action="options.php"
+  >
+    <?php settings_fields( 'gutenberg-starter-theme-options' ); ?>
+    <?php do_settings_sections( 'gutenberg-starter-theme-options' ); ?>
 
-			<table class="form-table">
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="gutenberg-starter-theme-align-wide" type="checkbox" value="1" <?php checked( '1', get_option( 'gutenberg-starter-theme-align-wide' ) ); ?> />
-							<?php _e( 'Enable wide and full alignments.', 'gutenberg-starter-theme' ); ?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#wide-alignment"><code>align-wide</code></a>)
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="gutenberg-starter-theme-editor-color-palette" type="checkbox" value="1" <?php checked( '1', get_option( 'gutenberg-starter-theme-editor-color-palette' ) ); ?> />
-							<?php _e( 'Enable a custom theme color palette.', 'gutenberg-starter-theme' ); ?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes"><code>editor-color-palette</code></a>)
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="gutenberg-starter-theme-dark-mode" type="checkbox" value="1" <?php checked( '1', get_option( 'gutenberg-starter-theme-dark-mode' ) ); ?> />
-							<?php _e( 'Enable a dark theme style.', 'gutenberg-starter-theme' ); ?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#dark-backgrounds"><code>dark-editor-style</code></a>)
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="gutenberg-starter-theme-wp-block-styles" type="checkbox" value="1" <?php checked( '1', get_option( 'gutenberg-starter-theme-wp-block-styles' ) ); ?> />
-							<?php _e( 'Enable core block styles on the front end.', 'gutenberg-starter-theme' ); ?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#default-block-styles"><code>wp-block-styles</code></a>)
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="gutenberg-starter-theme-responsive-embeds" type="checkbox" value="1" <?php checked( '1', get_option( 'gutenberg-starter-theme-responsive-embeds' ) ); ?> />
-							<?php _e( 'Enable responsive embedded content.', 'gutenberg-starter-theme' ); ?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#responsive-embedded-content"><code>responsive-embeds</code></a>)
-						</label>
-					</td>
-				</tr>
-			</table>
+    <table class="form-table">
+      <tr valign="top">
+        <td>
+          <label>
+            <input
+              name="gutenberg-starter-theme-align-wide"
+              type="checkbox"
+              value="1"
+              <?php checked( '1', get_option( 'gutenberg-starter-theme-align-wide' ) ); ?>
+            />
+            <?php _e( 'Enable wide and full alignments.', 'gutenberg-starter-theme' ); ?>
+            (<a
+              href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#wide-alignment"><code>align-wide</code></a>)
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td>
+          <label>
+            <input
+              name="gutenberg-starter-theme-editor-color-palette"
+              type="checkbox"
+              value="1"
+              <?php checked( '1', get_option( 'gutenberg-starter-theme-editor-color-palette' ) ); ?>
+            />
+            <?php _e( 'Enable a custom theme color palette.', 'gutenberg-starter-theme' ); ?>
+            (<a
+              href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes"
+            ><code>editor-color-palette</code></a>)
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td>
+          <label>
+            <input
+              name="gutenberg-starter-theme-dark-mode"
+              type="checkbox"
+              value="1"
+              <?php checked( '1', get_option( 'gutenberg-starter-theme-dark-mode' ) ); ?>
+            />
+            <?php _e( 'Enable a dark theme style.', 'gutenberg-starter-theme' ); ?>
+            (<a
+              href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#dark-backgrounds"><code>dark-editor-style</code></a>)
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td>
+          <label>
+            <input
+              name="gutenberg-starter-theme-wp-block-styles"
+              type="checkbox"
+              value="1"
+              <?php checked( '1', get_option( 'gutenberg-starter-theme-wp-block-styles' ) ); ?>
+            />
+            <?php _e( 'Enable core block styles on the front end.', 'gutenberg-starter-theme' ); ?>
+            (<a
+              href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#default-block-styles"
+            ><code>wp-block-styles</code></a>)
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td>
+          <label>
+            <input
+              name="gutenberg-starter-theme-responsive-embeds"
+              type="checkbox"
+              value="1"
+              <?php checked( '1', get_option( 'gutenberg-starter-theme-responsive-embeds' ) ); ?>
+            />
+            <?php _e( 'Enable responsive embedded content.', 'gutenberg-starter-theme' ); ?>
+            (<a
+              href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#responsive-embedded-content"
+            ><code>responsive-embeds</code></a>)
+          </label>
+        </td>
+      </tr>
+    </table>
 
-		<?php submit_button(); ?>
-	</form>
-	</div>
+    <?php submit_button(); ?>
+  </form>
+</div>
 <?php }
 
 
@@ -100,7 +136,6 @@ function gutenberg_starter_theme_options_page() { ?>
 function gutenberg_starter_theme_enable_align_wide() {
 
 	if ( get_option( 'gutenberg-starter-theme-align-wide', 1 ) == 1 ) {
-		
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 	}
@@ -113,28 +148,22 @@ add_action( 'after_setup_theme', 'gutenberg_starter_theme_enable_align_wide' );
  */
 function gutenberg_starter_theme_enable_editor_color_palette() {
 	if ( get_option( 'gutenberg-starter-theme-editor-color-palette', 1 ) == 1 ) {
-		
 		// Add support for a custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
-			array(
-				'name'  => __( 'Strong Blue', 'gutenberg-starter-theme' ),
-				'slug'  => 'strong-blue',
-				'color' => '#0073aa',
-			),
-			array(
-				'name'  => __( 'Lighter Blue', 'gutenberg-starter-theme' ),
-				'slug'  => 'lighter-blue',
-				'color' => '#229fd8',
-			),
-			array(
-				'name'  => __( 'Very Light Gray', 'gutenberg-starter-theme' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
-			),
 			array(
 				'name'  => __( 'Very Dark Gray', 'gutenberg-starter-theme' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#444',
+			),
+			array(
+				'name'  => __( 'Yellow', 'gutenberg-starter-theme' ),
+				'slug'  => 'yellow-theme',
+				'color' => '#fcd034',
+			),
+			array(
+				'name'  => __( 'Blue theme', 'gutenberg-starter-theme' ),
+				'slug'  => 'blue-theme',
+				'color' => '#17213c',
 			),
 		) );
 	}
@@ -147,11 +176,11 @@ add_action( 'after_setup_theme', 'gutenberg_starter_theme_enable_editor_color_pa
  */
 function gutenberg_starter_theme_enable_dark_mode() {
 	if ( get_option( 'gutenberg-starter-theme-dark-mode' ) == 1 ) {
-		
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style-editor-dark.css' );
-		
+
 		// Add support for dark styles.
 		add_theme_support( 'dark-editor-style' );
 	}
@@ -175,7 +204,7 @@ add_action( 'wp_enqueue_scripts', 'gutenberg_starter_theme_enable_dark_mode_fron
 function gutenberg_starter_theme_enable_wp_block_styles() {
 
 	if ( get_option( 'gutenberg-starter-theme-wp-block-styles', 1 ) == 1 ) {
-		
+
 		// Adding support for core block visual styles.
 		add_theme_support( 'wp-block-styles' );
 	}
