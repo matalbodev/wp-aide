@@ -1,0 +1,8 @@
+@use "sass:map";
+.wp-block-button__link.wp-element-button {
+	display: inline-block;
+	background-color: map.get($colors, "yellow");
+	color: map.get($colors, "blue");
+	padding: 0.65rem 20px;
+	font-weight: 500;
+}
