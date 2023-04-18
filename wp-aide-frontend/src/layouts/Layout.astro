@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import "@fontsource/inter";
+import "@fontsource/inter/variable.css";
 import "../styles/main.scss";
 export interface Props {
 	title: string;
@@ -13,7 +13,7 @@ const meta = res.head;
 ---
 
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth font-sans" lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
