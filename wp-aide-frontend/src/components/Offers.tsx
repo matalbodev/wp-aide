@@ -14,6 +14,8 @@ interface Props {
 		};
 	}[];
 }
+
+const animationOrder = [50, 100, 150, 200];
 export default function Offers(props: Props) {
 	const { offers } = props;
 	return (
@@ -24,6 +26,7 @@ export default function Offers(props: Props) {
 							<OfferCard
 								title={offer.title.rendered}
 								middle={index > 0 && index < 3}
+								animationOrder={animationOrder[index]}
 								tarif={[
 									{
 										prix: offer.acf.prix_de_loffre,
