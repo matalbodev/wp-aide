@@ -20,7 +20,7 @@ export default function Form() {
 	const commonsInputClasses = "border w-full shadow-xl p-2";
 
 	return (
-		<form id="contact" onSubmit={submit}>
+		<form onSubmit={submit}>
 			<div className="flex -mx-2">
 				<div className="px-2 pb-4 flex-1">
 					<input placeholder="Nom" className={commonsInputClasses} type="text" id="name" name="name" />

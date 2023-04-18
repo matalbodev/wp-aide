@@ -1,4 +1,4 @@
-import { useRef, type FC } from "react";
+import { useRef, type FC, useEffect, useState } from "react";
 import parse from "html-react-parser";
 import clsx from "clsx";
 import Button from "./Button";
@@ -19,13 +19,15 @@ interface Props {
 const OfferCard: FC<Props> = (props) => {
 	const { title, description, tarif, middle, tag, animationOrder } = props;
 
+	const [onScreenController, setOnScreenController] = useState<boolean>(false);
+
 	const arrTitle = title.split("|");
 	const suptitle = arrTitle[0];
 	const mainTitle = arrTitle[1];
 
 	const ref: any = useRef<HTMLDivElement>();
 
-	const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, middle ? "0px" : "20px");
+	const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, middle ? "200px" : "220px");
 
 	return (
 		<div

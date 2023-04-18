@@ -19,7 +19,7 @@ const animationOrder = [50, 100, 150, 200];
 export default function Offers(props: Props) {
 	const { offers } = props;
 	return (
-		<div id="offres" className="flex my-8 space-x-4">
+		<div id="offers" className="flex my-8 space-x-4">
 			{offers
 				? offers.map((offer, index: number) => (
 						<div className="flex-0 basis-1/4 h-auto" key={offer.id}>
