@@ -8,6 +8,16 @@
 		transform: translateZ(0);
 	}
 }
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateZ(0);
+	}
+}
 
 $duration: 0.5s;
 .animated {
@@ -23,6 +33,14 @@ $duration: 0.5s;
 	&__fadeInDown {
 		animation-name: fadeInDown;
 		-webkit-animation-name: fadeInDown;
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	&__fadeInUp {
+		animation-name: fadeInUp;
+		-webkit-animation-name: fadeInUp;
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
 	}
 
 	&--50 {
@@ -34,6 +52,10 @@ $duration: 0.5s;
 		-webkit-animation-delay: 300ms;
 	}
 	&--150 {
+		animation-delay: 450ms;
+		-webkit-animation-delay: 450ms;
+	}
+	&--200 {
 		animation-delay: 600ms;
 		-webkit-animation-delay: 600ms;
 	}
