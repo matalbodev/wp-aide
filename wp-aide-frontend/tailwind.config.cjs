@@ -6,11 +6,11 @@ module.exports = {
 		fontFamily: {
 			display: ["Inter"],
 			body: ["Inter"],
-			sans: ["Inter"],
+			sans: ["InterVariable", "Inter"],
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				"yellow-theme": "#fcd034",
