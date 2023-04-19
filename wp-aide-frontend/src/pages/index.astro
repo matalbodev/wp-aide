@@ -2,10 +2,23 @@
 import Index from "../components/Index";
 import Layout from "../layouts/Layout.astro";
 import { getHomeContent, getOffers } from "../utils/api";
-const contentString = await getHomeContent();
-const offersData = await getOffers();
+const res = await fetch("https://backoffice.wpaide.fr/graphql", {
+	method: "POST",
+	headers: { "Content-Type": "application/json" },
+	body: JSON.stringify({
+		query: `
+			query HomeContent {
+				page(id: "accueil", idType: URI) {
+					content(format: RENDERED)
+				}
+			}
+		`,
+	}),
+});
+const json = await res.json();
+console.log(json);
 ---
 
 <Layout title="homepage">
-	<Index client:load contentString={contentString} />
+	<Index client:load contentString={json.data.page.content} />
 </Layout>
