@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && jampack ./.vercel",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -30,6 +30,7 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
+    "@divriots/jampack": "^0.9.4",
     "node-html-parser": "^6.1.5",
     "sass": "^1.61.0"
   }
