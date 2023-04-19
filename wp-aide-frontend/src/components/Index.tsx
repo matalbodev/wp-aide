@@ -6,14 +6,23 @@ import ContactForm from "./ContactForm";
 import Button from "./Button";
 import Faq from "./Faq";
 import FaqQuestion from "./FaqQuestion";
+import { getOffers } from "../utils/api";
+import { useEffect, useState } from "react";
 
 interface Props {
 	contentString: string;
-	offers: [];
 }
 
 const Index = (props: Props) => {
-	const { contentString: content, offers } = props;
+	const { contentString: content } = props;
+
+	const [offers, setOffers] = useState<[]>([]);
+	useEffect(() => {
+		const fetchOffers = async () => {
+			setOffers(await getOffers());
+		};
+		fetchOffers();
+	}, []);
 	const options: HTMLReactParserOptions = {
 		replace: (domNode) => {
 			if (domNode instanceof Element && domNode.attribs) {
