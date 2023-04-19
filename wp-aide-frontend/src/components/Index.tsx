@@ -4,14 +4,25 @@ import { HTMLReactParserOptions, Element, domToReact } from "html-react-parser";
 import parse from "html-react-parser";
 import ContactForm from "./ContactForm";
 import Button from "./Button";
+import Faq from "./Faq";
+import FaqQuestion from "./FaqQuestion";
+import { getOffers } from "../utils/api";
+import { useEffect, useState } from "react";
 
 interface Props {
 	contentString: string;
-	offers: [];
 }
 
 const Index = (props: Props) => {
-	const { contentString: content, offers } = props;
+	const { contentString: content } = props;
+
+	const [offers, setOffers] = useState<[]>([]);
+	useEffect(() => {
+		const fetchOffers = async () => {
+			setOffers(await getOffers());
+		};
+		fetchOffers();
+	}, []);
 	const options: HTMLReactParserOptions = {
 		replace: (domNode) => {
 			if (domNode instanceof Element && domNode.attribs) {
@@ -35,10 +46,23 @@ const Index = (props: Props) => {
 						color = "yellow";
 					}
 					return (
-						<Button color={color} to={href}>
+						<Button as="a" color={color} to={href}>
 							{domToReact(children)}
 						</Button>
 					);
+				}
+				if (attribs.class && attribs.class.includes("rank-math-list")) {
+					const childNodes = domToReact(children, {
+						replace: (domNode) => {
+							if (domNode instanceof Element && domNode.attribs) {
+								const { name, children, attribs } = domNode;
+								if (attribs.class && attribs.class.includes("rank-math-list-item")) {
+									return <FaqQuestion>{domToReact(children)}</FaqQuestion>;
+								}
+							}
+						},
+					}) as JSX.Element[];
+					return <Faq>{childNodes}</Faq>;
 				}
 			}
 		},

@@ -14,11 +14,34 @@ export const post: APIRoute = async ({ request }) => {
 			{ status: 400 }
 		);
 	}
-	// Do something with the data, then return a success response
-	return new Response(
-		JSON.stringify({
-			message: "Success!",
-		}),
-		{ status: 200 }
-	);
+
+	const sendEmail = async () => {
+		let headersList = {
+			Accept: "*/*",
+			"Content-Type": "application/json",
+		};
+
+		let bodyContent = JSON.stringify({
+			html: `
+				Name: ${name} <br />
+				Email : ${email} <br />
+				Message : <br />
+				${message}
+			`,
+			to: "contact@wpaide.fr",
+			subject: "test",
+		});
+
+		let response = await fetch("https://backoffice.wpaide.fr/wp-json/wp-mail-rest-api/v1/send-email", {
+			method: "POST",
+			body: bodyContent,
+			headers: headersList,
+		});
+
+		let data = await response.text();
+		return data;
+	};
+	const response = await sendEmail();
+
+	return new Response(response, { status: 200 });
 };

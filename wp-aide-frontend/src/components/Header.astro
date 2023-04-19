@@ -1,18 +1,37 @@
 ---
+import Nav from "./Nav.astro";
 ---
 
-<header class="header alignfull">
+<script>
+	const header = document.querySelector(".header");
+	const stickyClasses = ["fixed", "bg-blue-theme"];
+	const headerSticky = () => {
+		const headerHeight = header?.clientHeight;
+		if (!headerHeight) return;
+		if (window.scrollY > headerHeight) {
+			for (const stickyClass of stickyClasses) {
+				header.classList.add(stickyClass);
+			}
+			header.classList.remove("absolute");
+			return;
+		}
+		for (const stickyClass of stickyClasses) {
+			header.classList.remove(stickyClass);
+		}
+		header.classList.add("absolute");
+	};
+
+	window.addEventListener("scroll", () => headerSticky());
+</script>
+
+<header class="header alignfull top-0 left-0 w-full z-50 pt-4 pb-4 absolute">
 	<div class="wp-block-group__inner-container px-6">
 		<div class="flex items-center">
 			<div class="text-white text-4xl">
 				<strong>WP</strong>-aide
 			</div>
 			<div class="navigation ml-auto">
-				<ul class="flex space-x-8">
-					<li><a class="text-white" href="#">nos offres</a></li>
-					<li><a class="text-white" href="#">à propos</a></li>
-					<li><a class="text-white" href="#">contact</a></li>
-				</ul>
+				<Nav />
 			</div>
 		</div>
 	</div>

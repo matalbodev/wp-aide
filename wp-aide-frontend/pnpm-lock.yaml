@@ -10,6 +10,12 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.2.4
     version: 3.2.4(astro@2.3.0)(react@18.2.0)
+  '@fontsource/inter':
+    specifier: ^4.5.15
+    version: 4.5.15
+  '@fontsource/twinkle-star':
+    specifier: ^4.5.9
+    version: 4.5.9
   '@types/react':
     specifier: ^18.0.21
     version: 18.0.33
@@ -969,6 +975,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/inter@4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
+    dev: false
+
+  /@fontsource/twinkle-star@4.5.9:
+    resolution: {integrity: sha512-41Z1cV7Dp505+/ceDMMSRRbeaSdkXYJyKGJzkUAu0lJWkUZHShuxzjHPa1Pq8hEndvBoBtAtq6MVgaryZ2DTgA==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
