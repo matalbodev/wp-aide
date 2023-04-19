@@ -37,7 +37,7 @@ export default function SearchBar() {
 	const status = responses[isAvailable || "default"];
 
 	return (
-		<form onSubmit={handleSentform} className="-mr-24 flex items-center mt-8 shadow-xl">
+		<form onSubmit={handleSentform} className="lg:-mr-24 flex items-center mt-8 shadow-xl">
 			<input
 				onChange={(e) => setIsFilled(e.target.value !== "")}
 				type="text"

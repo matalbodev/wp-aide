@@ -35,7 +35,7 @@ const OfferCard: FC<Props> = (props) => {
 			className={clsx(
 				"bg-blue-theme text-white px-8 relative flex flex-col overflow-hidden ",
 				onScreen ? "animated animated__fadeInUp animated--" + animationOrder : "opacity-0",
-				middle ? "h-full pt-16" : "h-[95%] align-middle pt-8 mt-[5%]"
+				middle ? "h-full pt-16" : "lg:h-[95%] lg:align-middle pt-8 lg:mt-[5%]"
 			)}
 		>
 			{tag !== "aucun" && <div className="absolute left-0 top-0 bg-yellow-theme py-2 px-8 text-blue-theme font-bold">{tag}</div>}
