@@ -22,12 +22,15 @@ import Nav from "./Nav.astro";
 	};
 
 	window.addEventListener("scroll", () => headerSticky());
+
+	// get screen size
+	const screenMobile = window.matchMedia("(max-width: 768px)");
 </script>
 
 <header class="header alignfull top-0 left-0 w-full z-50 pt-4 pb-4 absolute">
 	<div class="wp-block-group__inner-container px-6">
 		<div class="flex items-center">
-			<div class="text-white text-4xl">
+			<div class="text-white text-4xl flex-1">
 				<strong>WP</strong>-aide
 			</div>
 			<div class="navigation ml-auto">

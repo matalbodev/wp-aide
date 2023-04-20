@@ -6,8 +6,6 @@ import ContactForm from "./ContactForm";
 import Button from "./Button";
 import Faq from "./Faq";
 import FaqQuestion from "./FaqQuestion";
-import { getOffers } from "../utils/api";
-import { useEffect, useState } from "react";
 
 interface Props {
 	contentString: string;
@@ -15,14 +13,6 @@ interface Props {
 
 const Index = (props: Props) => {
 	const { contentString: content } = props;
-
-	const [offers, setOffers] = useState<[]>([]);
-	useEffect(() => {
-		const fetchOffers = async () => {
-			setOffers(await getOffers());
-		};
-		fetchOffers();
-	}, []);
 	const options: HTMLReactParserOptions = {
 		replace: (domNode) => {
 			if (domNode instanceof Element && domNode.attribs) {
@@ -31,7 +21,7 @@ const Index = (props: Props) => {
 					return <SearchBar />;
 				}
 				if (attribs.id === "offersList") {
-					return <Offers offers={offers} />;
+					return <Offers />;
 				}
 				if (attribs.id === "contactForm") {
 					return <ContactForm />;

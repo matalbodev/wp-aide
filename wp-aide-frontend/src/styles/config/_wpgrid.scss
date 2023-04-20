@@ -24,6 +24,11 @@ $gutter-size: 1rem;
 	.wp-block-column {
 		flex: 1;
 		margin: 0 $gutter-size;
+		@media screen and (max-width: 764px) {
+			+ .wp-block-column {
+				margin-top: $gutter-size;
+			}
+		}
 	}
 }
 
