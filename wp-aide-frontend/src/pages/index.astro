@@ -1,7 +1,7 @@
 ---
+export const prerender = true;
 import Index from "../components/Index";
 import Layout from "../layouts/Layout.astro";
-import { getHomeContent, getOffers } from "../utils/api";
 const res = await fetch("https://backoffice.wpaide.fr/graphql", {
 	method: "POST",
 	headers: { "Content-Type": "application/json" },
