@@ -1,5 +1,6 @@
 ---
 import Nav from "./Nav.astro";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <script>
@@ -27,13 +28,15 @@ import Nav from "./Nav.astro";
 	const screenMobile = window.matchMedia("(max-width: 768px)");
 </script>
 
-<header class="header alignfull top-0 left-0 w-full z-50 pt-4 pb-4 absolute">
+<header class="header alignfull top-0 left-0 w-full z-50 py-5 absolute">
 	<div class="wp-block-group__inner-container px-6">
-		<div class="flex items-center">
-			<div class="text-white text-4xl flex-1">
-				<strong>WP</strong>-aide
+		<div class="sm:flex items-center">
+			<div class="text-center sm:text-left">
+				<a class="iniline-block text-center" href="/">
+					<img class="mx-auto" src="/assets/logo-type-dark-bg.svg" alt="Logo" width="150" />
+				</a>
 			</div>
-			<div class="navigation ml-auto">
+			<div class="mt-4 sm:mt-0 navigation ml-auto">
 				<Nav />
 			</div>
 		</div>
