@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const reqMeta = await fetch(
-  "https://backoffice.wpaide.fr/wp-json/rankmath/v1/getHead?url=https://wpaide.fr"
+  "https://backoffice.wpaide.fr/wp-json/rankmath/v1/getHead?url=https://backoffice.wpaide.fr"
 );
 const res = await reqMeta.json();
 const meta = res.head;
